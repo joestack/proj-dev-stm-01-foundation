@@ -27,7 +27,7 @@ resource "aws_security_group_rule" "jh-egress" {
 }
 
 output "bastionhost_subnet_id" {
-    value = aws_subnet.dmz.id
+    value = aws_subnet.dmz_subnet.id
 }
 
 output "bastionhost_asg_id" {
