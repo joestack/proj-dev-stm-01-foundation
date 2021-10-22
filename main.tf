@@ -77,3 +77,7 @@ output "dns_zone_id" {
   value = data.aws_route53_zone.selected.zone_id
 }
 
+output "dns_domain" {
+  value = var.dns_domain
+}
+
