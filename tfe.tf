@@ -50,7 +50,14 @@ resource "aws_security_group_rule" "tfe-egress" {
   cidr_blocks       = ["0.0.0.0/0"]
 }
 
+locals {
+  tfenode_priv_ip = cidrhost(aws_subnet.dmz_subnet.cidr_block, 100)
+}
 
 output "tfe_asg_id" {
   value = aws_security_group.tfe.id
+}
+
+output "tfenode_priv_ip" {
+  value = local.tfenode_priv_ip
 }
