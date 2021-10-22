@@ -26,7 +26,9 @@ resource "aws_security_group_rule" "jh-egress" {
   cidr_blocks       = ["0.0.0.0/0"]
 }
 
-
+output "bastionhost_subnet_id" {
+    value = aws_subnet.dmz.id
+}
 
 output "bastionhost_asg_id" {
   value = aws_security_group.bastionhost.id
